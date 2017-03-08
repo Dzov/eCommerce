@@ -30,17 +30,22 @@ a {
 }
 
 .productArticle {
-  width: 300px;
-  border: 2px solid lightgrey;
+  width: 30%;
+  border: .5px solid lightgrey;
+  box-shadow: 2px 2px 5px lightgrey; 
   padding: 20px; 
+  min-height: 500px; 
 }
 
 .productArticle figure {
-  height: 280px; 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.productArticle figcaption{
+  margin: 20px; 
 }
 
 .btn {
@@ -71,18 +76,35 @@ li.articleNav_listItems:hover {
 }
 
 
+/******************  SHOPPING CART SECTION  ********************/
+
+
 .backToShopBtn {
   margin-top: 30px;
 }
 
 .cartSection {
-  border: 2px solid lightgrey;
   padding: 20px;
+  width: 50%; 
+  max-height: 400px; 
+  overflow: scroll;
+}
+
+
+.itemContainer {
+  height: 100px; 
+  width: 100%;
+  margin-bottom: 20px; 
+}
+
+.itemImg{
+  width: 15%; 
+  object-fit: contain;
+  box-shadow: 2px 2px 5px lightgrey;  
+  padding: 12px; 
 }
 
 .cartItems {
-  border-bottom: 2px solid lightgrey; 
   padding: 15px; 
 }
-
 

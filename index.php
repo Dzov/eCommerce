@@ -36,7 +36,7 @@
       }
     } 
     else {
-      include  "$article_dir/$last_Article";
+      include  "./productPres.php";
     }
   }
 
