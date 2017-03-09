@@ -6,7 +6,20 @@
     unset($_SESSION['cartItems'][$_GET['deleteItem']]) ; 
   }
 
+  //removes one from item value
+  if (isset($_GET['minus'])) {
+    if ($_SESSION['cartItems'][$_GET['minus']] > 0) {
+      $_SESSION['cartItems'][$_GET['minus']] --; 
+      if ($_SESSION['cartItems'][$_GET['minus']] == 0) { 
+        unset($_SESSION['cartItems'][$_GET['minus']]); 
+      }
+    }
+  }
 
+  // adds one to item value 
+  if (isset($_GET['plus'])) {
+      $_SESSION['cartItems'][$_GET['plus']] ++; 
+  }
 
 ?>
 
