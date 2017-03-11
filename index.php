@@ -1,12 +1,9 @@
 <?php 
   session_start(); 
 
-  $article_dir = "produits"; 
-  $getContent = $_GET["content"]; 
-  $article_Path = "$article_dir/$getContent";
-  $article_Files = array_reverse(array_diff(scandir("produits"), array('..', '.', '.DS_Store')));
-  $last_Article = $article_Files[0]; 
+  include "includes/variables.php"; 
 
+  // require "includes/classProduit.php"; 
 
   // Adds items to cart key/value pair
   if(isset( $_GET['cartItem'] )) {
@@ -20,7 +17,7 @@
     $_SESSION['cartItems'] = $carts;
   }
 
-
+  // includes the product page depending on product selected in list
   function includeMainArticle() {
     global $getContent;
     global $article_Path; 

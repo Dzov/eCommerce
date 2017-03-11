@@ -9,32 +9,37 @@
     <link rel="stylesheet" type="text/css" href="css/flex.css">
   </head>
 
-  <body>
-    <header class="flex spaceBtw mainHeader">
+  <body class="flex flexColumn spaceBtw">
+    <header class=" header flex spaceBtw mainHeader">
       <h1>Get some weird stuff</h1>
       <a href="shoppingPage.php" class="cartBtn"></a>
     </header>
-    <main class="flex justifyCenter spaceAround"> 
+    <main class="mainSection flex spaceAround"> 
+      <aside>
+        <h2>Product List</h2>
+        <h3><a href="stock.php">Stock</a></h3>
+        <ul class="articleNav_list">
+          <?php 
+            foreach ($article_Files as $produit) { 
+            $produit_Name = basename($produit, '.php');
+          ?> 
+            <li class='flex spaceBtw articleNav_listItems'>
+              <a href='index.php?content=<?= $produit ?>'> 
+                <?= ucfirst($produit_Name) ?> 
+              </a> 
+            </li>
+          <?php 
+            } 
+          ?>
+        </ul>
+      </aside>
       <article class="flex flexColumn spaceAround productArticle">
         <?php includeMainArticle(); ?>
         <a href="index.php?content=<?= $getContent ?>&amp;cartItem=<?= basename($getContent, '.php') ?>" class="addBtn btn selfCenter">
           Add to cart
         </a>
       </article> 
-      <aside>
-        <h2>Product List</h2>
-        <ul class="articleNav_list">
-          <?php foreach ($article_Files as $produit) { 
-            $produit_Name = basename($produit, '.php');?> 
-            <li class='flex spaceBtw articleNav_listItems'>
-              <a href='index.php?content=<?= $produit ?>'> 
-                <?= ucfirst($produit_Name) ?> 
-              </a> 
-            </li>
-          <?php } ?>
-        </ul>
-      </aside>
     </main>
-
+    <?php include "includes/footer.php" ?>
   </body>
 </html>

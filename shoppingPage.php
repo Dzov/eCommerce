@@ -1,6 +1,9 @@
 <?php 
   session_start(); 
 
+  include "includes/variables.php"; 
+  require "includes/objProduit.php"; 
+
   // Deletes the item
   if(isset($_GET['deleteItem'])) {
     unset($_SESSION['cartItems'][$_GET['deleteItem']]) ; 
@@ -30,14 +33,16 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/flex.css">
 </head>
-<body>
-  <header>
+<body class="flex flexColumn spaceBtw">
+  <header class="header">
     <h1>Shopping Cart Items</h1>
   </header>
-  <main class="flex flexColumn alignItemsCenter justifyCenter">
+  <main class="flex flexColumn alignItemsCenter">
     
     <section class="cartSection">
-      <?php foreach ($_SESSION['cartItems'] as $item => $value) { ?>
+      <?php 
+        foreach ($_SESSION['cartItems'] as $item => $value) { 
+      ?>
         <div class="itemContainer flex spaceBtw">
           <img class="itemImg" src="img/<?= $item ?>.jpg">
           <p class='cartItems selfCenter'> 
@@ -56,11 +61,14 @@
             </a>
           </div>
         </div> <!-- END cartItem_Container -->
-      <?php } ?>
+      <?php 
+        } 
+      ?>
     </section>
-    <a class="backToShopBtn btn" href="index.php">
+    <a class="backToShopBtn btn" href="index.php?content=<?=$last_Article?>">
       Continue Shopping
     </a>
   </main>
+  <?php include "includes/footer.php" ?>
 </body>
 </html>

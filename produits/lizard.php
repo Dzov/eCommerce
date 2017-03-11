@@ -1,7 +1,15 @@
-  <h1>Lizard</h1>
+<?php 
+  require "includes/objProduit.php"; 
+?>
+
+  <header class="flex spaceBtw">
+    <h1><?= $lizard -> _name;  ?></h1>
+    <h2><?= "$" .$lizard -> _price; ?></h2>
+  </header>
   <figure>
-    <img class="lizardPic" src="img/lizard.jpg">
+    <img src="img/lizard.jpg">
     <figcaption>
-      This is a lizard.
+      <?php echo $lizard -> _description; ?>
     </figcaption>
   </figure>
+  
