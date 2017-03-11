@@ -3,13 +3,13 @@
 ?>
 
   <header class="flex spaceBtw">
-    <h1><?= $rabbit -> _name;  ?></h1>
-    <h2><?= "$" .$rabbit -> _price; ?></h2>
+    <h1><?= $spider -> _name;  ?></h1>
+    <h2><?= "$" .$spider -> _price; ?></h2>
   </header>
   <figure>
-    <img src="img/rabbit.jpg">
+    <img src="img/spider.jpg">
     <figcaption>
-      <?= $rabbit -> _description; ?>
+      <?= $spider -> _description; ?>
     </figcaption>
   </figure>
   

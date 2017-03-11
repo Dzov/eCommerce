@@ -1,5 +1,5 @@
 <?php 
-  require "includes/objProduit.php"; 
+  require "PHPincludes/objProduit.php"; 
 ?>
 
   <header class="flex spaceBtw">
@@ -9,7 +9,7 @@
   <figure>
     <img src="img/turtle.jpg">
     <figcaption>
-      <?php echo $turtle -> _description; ?>
+      <?= $turtle -> _description; ?>
     </figcaption>
   </figure>
   

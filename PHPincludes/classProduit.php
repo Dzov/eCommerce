@@ -2,13 +2,15 @@
 
 class Produit {
   public $_name;
+  public $_image; 
   public $_description;  
   public $_price; 
   public $_cartCount; 
   private $_stock;
 
-  public function __construct($name, $description, $price, $cartCount, $stock) {
+  public function __construct($name, $image, $description, $price, $cartCount, $stock) {
     $this -> _name = $name; 
+    $this -> _image = $image; 
     $this -> _description = $description; 
     $this -> _price = $price; 
     $this -> _cartCount = $cartCount; 
